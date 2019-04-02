@@ -6,7 +6,7 @@ const initialState = {
     favourites: [],
 };
 
-export default function appReducer(state = initialState, action) {
+export function listingsReducer(state = initialState, action) {
     switch(action.type) {
         case actions.GET_LISTINGS:
             return Object.assign({}, state, {

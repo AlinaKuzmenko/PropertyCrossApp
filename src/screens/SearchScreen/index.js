@@ -23,7 +23,6 @@ class SearchScreen extends React.Component {
     };
 
     render() {
-
         return (
             <View style={styles.search}>
                 <Text>
@@ -31,18 +30,18 @@ class SearchScreen extends React.Component {
                     Use the form below to search for houses to buy.
                     Use the form below to search for houses to buy.
                 </Text>
-                <Button
-                    onPress={this.getListings}
-                    title="Go"
-                    color="red"
-                    accessibilityLabel="Get listings"
-                />
                 <TextInput
                     style={styles.textInput}
                     onChangeText={(query) => this.setState({ query })}
                     value={this.state.query}
                     placeholder="Search ..."
                     placeholderTextColor="#999"
+                />
+                <Button
+                    onPress={this.getListings}
+                    title="Go"
+                    color="red"
+                    accessibilityLabel="Get listings"
                 />
                 {/*<List />*/}
             </View>
