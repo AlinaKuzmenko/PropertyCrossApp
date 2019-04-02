@@ -1,9 +1,12 @@
 import React from 'react';
 import { BackHandler } from 'react-native';
+import { createReduxContainer } from 'react-navigation-redux-helpers';
 import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
 
-import Root from '../Root';
+import AppNavigator from './AppNavigator';
+
+const App = createReduxContainer(AppNavigator);
 
 class ReduxNavigation extends React.Component {
     componentDidMount() {
@@ -26,7 +29,7 @@ class ReduxNavigation extends React.Component {
     render() {
         const { nav, dispatch } = this.props;
 
-        return <Root state={nav} dispatch={dispatch} />;
+        return <App state={nav} dispatch={dispatch} />;
     }
 }
 
